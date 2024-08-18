@@ -8,9 +8,10 @@ import random
 def guessing_game():
     active = True
     guess_name = ["Rhys", "Ryan", "Phill", "Jade", "Thelma", "Victoria"]
+    msg = "Hi I will try to guess your name!"
     while active:
         try:
-            print("Hi I will try to guess your name!")
+            print(msg)
             guess = random.choice(guess_name)
             answer = input(f"Is your name {guess}. [y/n]: ").lower()
             if answer == "y":
@@ -19,6 +20,7 @@ def guessing_game():
             elif answer == 'n':
                 active = True
                 print("You are an enigma I will guess again")
+                msg = "Lets go again, I will try to guess your name!"
             else:
                 print("Please enter keys [y/n]: ")
         except Exception as e:
